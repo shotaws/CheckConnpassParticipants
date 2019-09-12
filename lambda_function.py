@@ -29,7 +29,7 @@ def post_slack():
             
             # メッセージの組み立て
             dt_now = datetime.datetime.now().strftime('%Y/%m/%d %H:%M:%S')
-            message = "申込者は" + str(body_json['events'][0]['accepted']) + '人です！' + "(" + str(dt_now) + " 現在) "
+            message = str(body_json['events'][0]['accepted']) + '人が申し込んでいます！' + ' (' + str(dt_now) + ' 現在)'
             send_data = {
                 "username": username,
                 "icon_emoji": icom,
